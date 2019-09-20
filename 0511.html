@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<button id="btoa">点我,一个参数</button>
+<button id="btob">点我,2个参数</button>
+
+<div>
+    <p>点我,三个参数</p>
+</div>
+<script>
+    //1个参数
+    $("#btoa").on("click",function(){
+        console.log("aaaaa")
+    })
+    //2个参数
+    $("#btob").on("click mouseenter",function(){
+        console.log("bbbbbbb")
+    })
+    //3个参数,1子元素
+    $("div").on("click","p",function(){
+        console.log("ccccc")
+    })
+//3个参数,2,第二个是对象
+    $("div").on("click",{name:"lala",age:12},function(e){
+        console.log(e.data)
+    })
+    //取消事件绑定
+    $("#btoa").off("click")
+</script>
+</body>
+</html>

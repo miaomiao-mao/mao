@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<div id="demodiv"></div>
+<script>
+    var arr=["a","b","c","d","e","f","g","h","i"];
+
+    var newHtml="";
+    arr.forEach(function(v,i){
+        newHtml+="<button id='"+v+"'>"+v+"</button>";
+    })
+    console.log(newHtml);
+
+//    js语法
+//        document.getElementById("demodiv").innerHTML=newHtml;
+//  jq语法
+        $("#demodiv").html(newHtml);
+
+
+     arr.forEach(function(v,i){
+         $("#"+v).on("click",function(){
+             console.log(v)
+         })
+     })
+
+
+
+</script>
+</body>
+</html>

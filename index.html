@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+        <button onclick="xxxx">点我</button>
+        <button id="btna">on事件绑定 2个参数</button>
+        <button id="btnb">按钮绑定了多个事件</button>
+        <div>
+            <button>我是div的子元素</button>
+            <p>尝试点我</p>
+        </div>
+        <button id="btnc">第二个参数是对象</button>
+        <div>
+            <h1>测试取消时间绑定</h1>
+            <button id="btnd">我有事件</button>
+            <button onclick="fun()">移除他的事件</button>
+        </div>
+        <script>
+//            js事件绑定
+//            document.getElementsByTagName("button")[0].addEventListener("click",function(event){
+//
+//            },false)
+//
+//            document.getElementsByTagName("button")[0].onclick=function(){
+//
+//            }
+
+
+//            jQuery中使用on来进行事件绑定（必须是jquery  1.7以上的版本）
+//            1.两个参数
+            $("#btna").on("click",function(){
+                console.log("aaaaa")
+            })
+//            2.两个参数（第一个参数传入多个内容）
+             $("#btnb").on("click mouseenter",function(){
+                 console.log("bbbbbb");
+             })
+//            3.三个参数如果第二个参数是字符串那么就是子选择器
+//            （1）$("div").on("click","button",function(){}) 给页面中所有div 下的子元素button标签绑定点击事件
+//                $("div").on("click","button",function(){
+                $("div").on("click","p",function(){
+                    console.log("ccccccc")
+                })
+
+//              4.三个参数 第二个参数是对象  那么就是参数的传递(了解)
+            $("#btnc").on("click",{name:"小名",age:19},function(e){
+                console.log(e.data);
+            })
+
+//            移除事件
+            $("#btnd").on("click mouseenter",function(){
+                console.log("dddddddddd")
+            })
+
+            var fun=function(){
+//                移除#btnd的点击事件
+//                $("#btnd").off("click");
+//                如果什么参数都不传递  那么就是移除所有事件
+                $("#btnd").off();
+            }
+
+        </script>
+
+
+</body>
+</html>

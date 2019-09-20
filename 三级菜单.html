@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .con{
+            width: 800px;
+            margin: 0px auto;
+        }
+        .demoul>li{
+            display: inline-block;
+            background-color: green;
+            color: white;
+            width: 150px;
+            position: relative;
+        }
+        .demoul>li>ul>li{
+            background-color: orange;
+            position: relative;
+        }
+        .sanji{
+            position: absolute;
+            left: 150px;
+            top: 0px;
+            color: black;
+            width: 100px;
+            background-color: pink;
+            display: none;
+        }
+        .demoul>li>ul{
+            display: none;
+            position: absolute;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+        <div class="con">
+            <ul class="demoul">
+                <li>
+                    菜单1
+                    <ul>
+                        <li>
+                            二级1
+                            <ul class="sanji">
+                                <li>1三级1</li>
+                                <li>1三级2</li>
+                                <li>1三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级2
+                            <ul class="sanji">
+                                <li>2三级1</li>
+                                <li>2三级2</li>
+                                <li>2三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级3
+                            <ul class="sanji">
+                                <li>3三级1</li>
+                                <li>3三级2</li>
+                                <li>3三级3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    菜单2
+                    <ul>
+                        <li>
+                            二级1
+                            <ul class="sanji">
+                                <li>1三级1</li>
+                                <li>1三级2</li>
+                                <li>1三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级2
+                            <ul class="sanji">
+                                <li>2三级1</li>
+                                <li>2三级2</li>
+                                <li>2三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级3
+                            <ul class="sanji">
+                                <li>3三级1</li>
+                                <li>3三级2</li>
+                                <li>3三级3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    菜单3
+                    <ul>
+                        <li>
+                            二级1
+                            <ul class="sanji">
+                                <li>1三级1</li>
+                                <li>1三级2</li>
+                                <li>1三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级2
+                            <ul class="sanji">
+                                <li>2三级1</li>
+                                <li>2三级2</li>
+                                <li>2三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级3
+                            <ul class="sanji">
+                                <li>3三级1</li>
+                                <li>3三级2</li>
+                                <li>3三级3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    菜单4
+                    <ul>
+                        <li>
+                            二级1
+                            <ul class="sanji">
+                                <li>1三级1</li>
+                                <li>1三级2</li>
+                                <li>1三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级2
+                            <ul class="sanji">
+                                <li>2三级1</li>
+                                <li>2三级2</li>
+                                <li>2三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级3
+                            <ul class="sanji">
+                                <li>3三级1</li>
+                                <li>3三级2</li>
+                                <li>3三级3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    菜单5
+                    <ul>
+                        <li>
+                            二级1
+                            <ul class="sanji">
+                                <li>1三级1</li>
+                                <li>1三级2</li>
+                                <li>1三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级2
+                            <ul class="sanji">
+                                <li>2三级1</li>
+                                <li>2三级2</li>
+                                <li>2三级3</li>
+                            </ul>
+                        </li>
+                        <li>
+                            二级3
+                            <ul class="sanji">
+                                <li>3三级1</li>
+                                <li>3三级2</li>
+                                <li>3三级3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            $(".demoul li").hover(function(){
+//                鼠标移入事件
+//                如何知道我移入到哪里了呢？
+//                this在现阶段只需要知道   谁触发了这个事件this就是谁
+//                    console.log(this)
+                var demoul=this.children[0];
+//                判断一下具体有没有子元素
+                if(demoul){
+//                    如果有子元素那么就显示子元素
+                    demoul.style.display="block";
+                }
+
+            },function(){
+//                鼠标移出事件
+                var demoul=this.children[0];
+//                判断一下具体有没有子元素
+                if(demoul){
+//                    如果有子元素那么就显示子元素
+                    demoul.style.display="none";
+                }
+            })
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<div id="con"></div>
+<script>
+    var a=["a","v","2","b","mo","l"]
+    var nhtml="";
+    a.forEach(function(b,c){
+        console.log(b+"------"+c)
+
+        nhtml+="<button id='"+b+"'>"+b+"</button>"
+    })
+
+
+    $("con").html(nhtml)
+    a.forEach(function(b,c){
+        $("#"+b).on(function(){
+            console.log(b)
+        })
+    })
+
+</script>
+</body>
+</html>
